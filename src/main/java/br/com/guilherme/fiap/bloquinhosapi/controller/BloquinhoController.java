@@ -1,6 +1,6 @@
 package br.com.guilherme.fiap.bloquinhosapi.controller;
 
-import br.com.guilherme.fiap.bloquinhosapi.BloquinhoComponent;
+import br.com.guilherme.fiap.bloquinhosapi.component.BloquinhoComponent;
 import br.com.guilherme.fiap.bloquinhosapi.model.Bloquinho;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

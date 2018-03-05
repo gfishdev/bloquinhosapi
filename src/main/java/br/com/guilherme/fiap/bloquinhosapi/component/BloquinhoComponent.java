@@ -1,4 +1,4 @@
-package br.com.guilherme.fiap.bloquinhosapi;
+package br.com.guilherme.fiap.bloquinhosapi.component;
 
 import br.com.guilherme.fiap.bloquinhosapi.model.Bloquinho;
 import br.com.guilherme.fiap.bloquinhosapi.repository.BloquinhoRepository;
