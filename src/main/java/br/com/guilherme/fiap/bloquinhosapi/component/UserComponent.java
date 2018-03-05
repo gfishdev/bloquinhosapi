@@ -14,7 +14,7 @@ public class UserComponent {
     UserRepository userRepository;
 
     public void save(User user) {
-        List<User> users = userRepository.findByName(user.getUsername());
+        List<User> users = userRepository.findByName(user.getUsername(), user.getPassword());
         if (!users.isEmpty()) {
             user.setId(users.get(0).getId());
         }
@@ -22,9 +22,9 @@ public class UserComponent {
     }
 
     // TODO: Encontrar a maneira mais segura de fazer o login e retornar o usuario sem senha
-    public User findUser(String name) {
+    public User findUser(String name, String password) {
         User user;
-        List<User> users = userRepository.findByName(name);
+        List<User> users = userRepository.findByName(name, password);
         if (users.isEmpty())
             return new User();
         else {
@@ -33,9 +33,9 @@ public class UserComponent {
         }
     }
 
-    public void inactive(String name) {
+    public void inactive(String name, String password) {
         User user;
-        List<User> users = userRepository.findByName(name);
+        List<User> users = userRepository.findByName(name, password);
         if (!users.isEmpty()) {
             user = users.get(0);
             user.setActive(false);
