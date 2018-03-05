@@ -21,6 +21,17 @@ public class UserComponent {
         userRepository.save(user);
     }
 
+    public User findUser(String name) {
+        User user;
+        List<User> users = userRepository.findByName(name);
+        if (users.isEmpty())
+            return new User();
+        else {
+            user = users.get(0);
+            return user;
+        }
+    }
+
     public void inactive(String name) {
         User user;
         List<User> users = userRepository.findByName(name);
