@@ -21,6 +21,7 @@ public class UserComponent {
         userRepository.save(user);
     }
 
+    // TODO: Encontrar a maneira mais segura de fazer o login e retornar o usuario sem senha
     public User findUser(String name) {
         User user;
         List<User> users = userRepository.findByName(name);
