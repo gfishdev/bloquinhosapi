@@ -13,13 +13,14 @@ public class UserComponent {
     @Autowired
     UserRepository userRepository;
 
-    public void save(User user) {
+    public User save(User user) {
         List<User> users = userRepository.findByUsername(user.getUsername(), user.getPassword());
         if (!users.isEmpty()) {
             user.setId(users.get(0).getId());
         }
         user.setActive(true);
         userRepository.save(user);
+        return user;
     }
 
     // TODO: Encontrar a maneira mais segura de fazer o login e retornar o usuario sem senha

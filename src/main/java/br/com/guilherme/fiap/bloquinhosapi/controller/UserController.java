@@ -19,7 +19,7 @@ public class UserController {
 
     @PostMapping()
     public User save(@RequestBody User user) {
-        userComponent.save(user);
+        user = userComponent.save(user);
         return user;
     }
 }
