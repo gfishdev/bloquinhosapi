@@ -18,6 +18,7 @@ public class UserComponent {
         if (!users.isEmpty()) {
             user.setId(users.get(0).getId());
         }
+        user.setActive(true);
         userRepository.save(user);
     }
 
